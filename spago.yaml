@@ -1,0 +1,29 @@
+package:
+  name: affjax-node
+  publish:
+    license: Apache-2.0
+    version: 1.0.0
+    location:
+      githubOwner: purescript-contrib
+      githubRepo: purescript-affjax-node
+  dependencies:
+    - aff
+    - affjax
+    - either
+    - maybe
+    - prelude
+  test:
+    main: Test.Main
+    dependencies:
+      - argonaut-core
+      - console
+      - datetime
+      - effect
+      - exceptions
+      - foreign-object
+      - http-methods
+      - transformers
+workspace:
+  extraPackages: {}
+  packageSet:
+    registry: 60.5.0
