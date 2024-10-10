@@ -27,8 +27,17 @@ jobs:
             .spago
             output
 
+      - name: Setup node and npm
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          cache-dependency-path: "**/package-lock.json"
+
+      - name: Install NPM dependencies
+        run: npm install
+
       - name: Build source
-        run: spago build --censor-stats --strict --pedantic-packages
+        run: spago build --censor-stats --strict --ensure-ranges --pedantic-packages
 
       - name: Run tests
         run: spago test --offline --censor-stats --strict --pedantic-packages -- --censor-codes=UserDefinedWarning
